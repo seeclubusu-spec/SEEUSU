@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SEE USU Events Calendar</title>
+<meta name="description" content="Subscribe to the Society of Entrepreneurial Engineers events calendar at Utah State University.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:title" content="SEE USU Events Calendar">
+<meta property="og:description" content="Subscribe once and our events stay up to date in your calendar.">
+<meta property="og:image" content="og-image.jpg">
+<meta name="theme-color" content="#0a2150">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0a2a5e; --navy-deep:#0a2150; --ink:#12203a; --paper:#f2f5fa;
+  --line:#cfd8e8; --accent:#f2b705; --white:#fff;
+  --head:'Bricolage Grotesque',system-ui,sans-serif;
+  --body:'Source Sans 3',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;font:18px/1.55 var(--body);color:var(--ink);background:var(--paper)}
+header{background:var(--navy-deep);color:var(--white);padding:48px 24px 60px;border-bottom:5px solid var(--accent)}
+.wrap{max-width:760px;margin:0 auto}
+.brand{margin-bottom:40px}
+.brand img{display:block;height:clamp(96px,22vw,140px);width:auto}
+h1{font:800 clamp(2.4rem,7vw,3.8rem)/1.02 var(--head);margin:0 0 16px;letter-spacing:-.02em}
+header p{margin:0;max-width:52ch;color:#c9d6ee}
+main{padding:40px 24px 64px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 0;border-bottom:1px solid var(--line)}
+.row h2{font:600 1.25rem var(--head);margin:0 0 4px}
+.row p{margin:0;color:#43526f;font-size:1rem}
+.btn{flex:none;display:inline-block;background:var(--navy);color:var(--white);text-decoration:none;font:600 1rem var(--body);padding:12px 22px;border-radius:6px;border:2px solid var(--navy);cursor:pointer}
+.btn:hover{background:var(--navy-deep)}
+.btn.alt{background:transparent;color:var(--navy)}
+.btn.alt:hover{background:var(--navy);color:var(--white)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+details{border-bottom:1px solid var(--line)}
+details summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 0;cursor:pointer}
+details summary::-webkit-details-marker{display:none}
+details summary h2{font:600 1.25rem var(--head);margin:0 0 4px}
+details summary p{margin:0;color:#43526f;font-size:1rem}
+details summary .btn::after{content:"Show steps"}
+details[open] summary .btn::after{content:"Hide steps"}
+.steps{padding:0 0 28px}
+.steps h3{font:600 1.05rem var(--head);margin:24px 0 8px}
+.steps ol{margin:0;padding-left:1.3em}
+.steps li{margin:4px 0}
+.note{margin:14px 0 0;padding:12px 16px;background:#e4ebf7;border-left:4px solid var(--accent);font-size:1rem}
+.feed{display:flex;gap:8px;align-items:stretch;margin:12px 0}
+.feed code{flex:1;min-width:0;overflow-x:auto;white-space:nowrap;background:var(--white);border:1px solid var(--line);border-radius:6px;padding:10px 12px;font-size:.85rem}
+.feed button{flex:none;font:600 .95rem var(--body);background:var(--white);color:var(--navy);border:2px solid var(--navy);border-radius:6px;padding:0 16px;cursor:pointer}
+.feed button:hover{background:var(--navy);color:var(--white)}
+footer{padding:28px 24px 48px;color:#5a6985;font-size:.95rem;border-top:1px solid var(--line)}
+@media (max-width:560px){
+  .row,details summary{flex-direction:column;align-items:flex-start}
+  .btn{width:100%;text-align:center}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <img src="logo.png" alt="SEE: Society of Entrepreneurial Engineers" width="626" height="264">
+    </div>
+    <h1>SEE USU Events Calendar</h1>
+    <p>Add our events to your own calendar once. When we add or change an event, your calendar updates on its own.</p>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <div class="row">
+      <div>
+        <h2>Google Calendar</h2>
+        <p>One click. Events stay in sync automatically.</p>
+      </div>
+      <a class="btn" id="link-google" href="#">Subscribe</a>
+    </div>
+
+    <div class="row">
+      <div>
+        <h2>Apple Calendar on iPhone or iPad</h2>
+        <p>Open this page in Safari and tap Subscribe.</p>
+      </div>
+      <a class="btn" id="link-webcal" href="#">Subscribe</a>
+    </div>
+
+    <details>
+      <summary>
+        <div>
+          <h2>Apple Calendar on Mac</h2>
+          <p>Paste the feed link into the Calendar app.</p>
+        </div>
+        <span class="btn alt"></span>
+      </summary>
+      <div class="steps">
+        <ol>
+          <li>Open the <strong>Calendar</strong> app on your Mac (not a browser).</li>
+          <li>In the menu bar, choose <strong>File &rarr; New Calendar Subscription&hellip;</strong></li>
+          <li>Paste this link:
+            <div class="feed"><code data-feed="webcal"></code><button type="button">Copy</button></div>
+          </li>
+          <li>Click <strong>Subscribe</strong>, name it (for example, <em>SEE Events</em>), set <strong>Auto-refresh</strong> to <em>Every day</em>, and click <strong>OK</strong>.</li>
+        </ol>
+        <p class="note">On iPhone, events can take up to an hour to appear. To force a refresh, go to Settings &rarr; Calendar &rarr; Accounts, tap the subscribed calendar, and toggle it off and on.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <div>
+          <h2>Microsoft Outlook</h2>
+          <p>Subscribe from the web or the desktop app.</p>
+        </div>
+        <span class="btn alt"></span>
+      </summary>
+      <div class="steps">
+        <p style="margin:0">Use this link in every version of Outlook:</p>
+        <div class="feed"><code data-feed="https"></code><button type="button">Copy</button></div>
+
+        <h3>Outlook on the web and new Outlook</h3>
+        <ol>
+          <li>Open <strong>Calendar</strong> and click <strong>Add calendar</strong>.</li>
+          <li>Choose <strong>Subscribe from web</strong> and paste the link.</li>
+          <li>Name it and click <strong>Import</strong>.</li>
+        </ol>
+
+        <h3>Outlook desktop (365)</h3>
+        <ol>
+          <li>Go to <strong>File &rarr; Account Settings &rarr; Account Settings&hellip;</strong></li>
+          <li>Open the <strong>Internet Calendars</strong> tab and click <strong>New&hellip;</strong></li>
+          <li>Paste the link, click <strong>Add</strong>, name it, and click <strong>OK</strong>.</li>
+        </ol>
+        <p class="note">The first sync can take up to 24 hours. To force it, right-click the calendar in the sidebar and choose Sync, or press F9 in Outlook desktop. Not sure which version you have? If you see a &ldquo;Try the new Outlook&rdquo; toggle, use the desktop steps.</p>
+      </div>
+    </details>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap"><strong>See the System. Build the Solution.</strong><br>Society of Entrepreneurial Engineers &middot; Utah State University</div>
+</footer>
+
+<script>
+// ===== EDIT THIS ONE LINE =====
+// Google Calendar > Settings > your calendar > Integrate calendar > "Calendar ID"
+const CALENDAR_ID = "c5ec8e694c9c8257ed42feb3ff16d7b26698cf868246f0cb87828cc042f1f1f9@group.calendar.google.com";
+// ==============================
+
+const enc = encodeURIComponent(CALENDAR_ID);
+const feed = "calendar.google.com/calendar/ical/" + enc + "/public/basic.ics";
+const urls = {
+  google: "https://calendar.google.com/calendar/r?cid=" + enc,
+  webcal: "webcal://" + feed,
+  https:  "https://" + feed
+};
+document.getElementById("link-google").href = urls.google;
+document.getElementById("link-webcal").href = urls.webcal;
+document.querySelectorAll("[data-feed]").forEach(function (code) {
+  code.textContent = urls[code.dataset.feed];
+  code.nextElementSibling.addEventListener("click", function (e) {
+    var btn = e.currentTarget;
+    navigator.clipboard.writeText(code.textContent).then(function () {
+      btn.textContent = "Copied";
+      setTimeout(function () { btn.textContent = "Copy"; }, 1800);
+    }, function () {
+      btn.textContent = "Press Ctrl+C";
+      var r = document.createRange(); r.selectNodeContents(code);
+      var s = getSelection(); s.removeAllRanges(); s.addRange(r);
+    });
+  });
+});
+</script>
+</body>
+</html>
